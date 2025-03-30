@@ -1536,6 +1536,39 @@ function bindContentModalEvents() {
   })
 }
 
+function getStoredTheme() {
+    return localStorage.getItem("theme");
+}
+
+function setStoredTheme(theme) {
+    localStorage.setItem("theme", theme);
+}
+
+function setTheme(theme) {
+  const icons = {
+    "light": "fa-lightbulb-o",
+    "dark": "fa-moon-o",
+    "auto": "fa-adjust",
+  }
+
+  theme = theme ?? "auto";
+  const actual = theme === "auto" ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : theme;
+
+  document.documentElement.setAttribute("data-bs-theme", actual);
+  $("#theme_switcher i.fa").removeClass().addClass(`fa ${icons[theme]}`);
+  editor.setTheme(actual === "light" ? "ace/theme/tomorrow" : "ace/theme/tomorrow_night");
+}
+
+function toggleTheme() {
+  const themes = ["light", "dark", "auto"];
+
+  const current = getStoredTheme() ?? "auto";
+  const next = themes[(themes.indexOf(current) + 1) % themes.length];
+
+  setTheme(next);
+  setStoredTheme(next);
+}
+
 $(document).ready(function() {
   initDropdownMenus();
   bindInputResizeEvents();
@@ -1549,6 +1582,7 @@ $(document).ready(function() {
   $("#table_query").on("click",       function() { showQueryPanel();       });
   $("#table_connection").on("click",  function() { showConnectionPanel();  });
   $("#table_activity").on("click",    function() { showActivityPanel();    });
+  $("#theme_switcher").on("click",    function() { toggleTheme();          });
 
   $("#run").on("click", function() {
     runQuery();
@@ -1579,8 +1613,8 @@ $(document).ready(function() {
   });
 
   $("#results").on("click", "tr", function(e) {
-    $("#results tr.selected").removeClass();
-    $(this).addClass("selected");
+    $("#results tr.table-active").removeClass();
+    $(this).addClass("table-active");
   });
 
   $("#objects").on("click", ".schema-group-title", function(e) {
@@ -1876,6 +1910,7 @@ $(document).ready(function() {
   initEditor();
   addShortcutTooltips();
   bindDatabaseObjectsFilter();
+  setTheme(getStoredTheme());
 
   // Set session from the url
   var reqUrl = new URL(window.location);
