@@ -1,7 +1,9 @@
 # ------------------------------------------------------------------------------
 # Builder Stage
 # ------------------------------------------------------------------------------
-FROM golang:1.24-alpine AS build
+FROM golang:1.25-alpine AS build
+
+RUN apk add git make
 
 # Set default build argument for CGO_ENABLED
 ARG CGO_ENABLED=0
