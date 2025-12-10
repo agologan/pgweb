@@ -10,6 +10,8 @@
 }
 
 [data-bs-theme=light] {
+  --bs-secondary-bg: #f5f5f5;
+
   .table {
     --bs-table-striped-bg: #f9f9f9;
     --bs-table-color-state: #3a3633;
@@ -655,9 +657,9 @@ body {
   position: fixed;
   top: 20%;
   left: 20%;
-  background: #fff;
-  border: 1px solid #ccc;
-  box-shadow: #ddd 0 0 20px;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  box-shadow: var(--bs-border-color) 0 0 20px;
 }
 
 #content_modal .content {
@@ -665,7 +667,6 @@ body {
   position: relative;
   padding: 8px;
   white-space: break-spaces;
-  background: #fff;
   overflow-y: scroll;
   height: 366px;
   box-sizing: border-box;
@@ -674,7 +675,7 @@ body {
 #content_modal .title {
   font-weight: bold;
   line-height: 24px;
-  background: #f5f5f5;
+  background: var(--bs-secondary-bg);
   padding: 4px 4px 4px 8px;
 }
 
@@ -682,23 +683,12 @@ body {
   float: right;
 }
 
-#content_modal .actions .fa {
+#content_modal .actions .btn {
   float: right;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
-  font-size: 13px;
-  text-align: center;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  cursor: pointer;
   margin-left: 4px;
-}
-
-#content_modal .actions .fa:hover {
-  border-color: #999;
-  box-shadow: #eee 0 0 5px;
+  --bs-btn-padding-y: .125rem;
+  --bs-btn-padding-x: .375rem;
+  --bs-btn-font-size: .75rem;
 }
 
 #error_banner {
