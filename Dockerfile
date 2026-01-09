@@ -27,6 +27,8 @@ FROM alpine
 
 RUN apk add --no-cache ca-certificates postgresql-client
 
+RUN wget "https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem" -O /usr/local/share/ca-certificates/global-bundle.crt && update-ca-certificates
+
 COPY --from=build /build/pgweb /usr/bin/pgweb
 
 RUN adduser -S -u 1000 pgweb
