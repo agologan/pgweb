@@ -6,3 +6,5 @@ pgweb
 bin
 tmp/
 cover.out
+frontend/node_modules/
+static/dist/

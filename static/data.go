@@ -6,8 +6,8 @@ import (
 	"os"
 )
 
-//go:embed img/* js/* css/* fonts/*
-//go:embed index.html
+//go:embed img/* js/* css/* fonts/* dist/* dist/assets/*
+//go:embed index.html legacy.html
 var assets embed.FS
 
 func GetFilesystem() http.FileSystem {

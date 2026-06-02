@@ -1,0 +1,233 @@
+#main {
+  display: block;
+}
+
+#main.hidden {
+  display: none;
+}
+
+#nav ul {
+  display: block;
+}
+
+#nav ul::after,
+.connection-actions::after,
+#input .actions::after,
+#pagination::after,
+#pagination .filters::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#nav ul li {
+  user-select: none;
+}
+
+#nav ul li#theme_switcher {
+  float: right;
+}
+
+#nav .connection-actions {
+  display: block;
+}
+
+#sidebar .current-database .wrap .database-switch-input {
+  margin-left: 30px;
+  display: inline-block;
+  width: 200px;
+  height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#sidebar .current-database input.typeahead.database-switch-input,
+#sidebar .current-database select.typeahead.database-switch-input {
+  display: block;
+  position: absolute;
+  top: 14px;
+}
+
+#sidebar .current-database select.typeahead.database-switch-input {
+  background: #79589f;
+  color: #fff;
+  border: 0 none;
+  outline: none;
+}
+
+#input .actions .dropdown-inline {
+  float: left;
+  margin-right: 10px;
+}
+
+#input .actions .dropdown-inline select,
+#input .actions .dropdown-inline button,
+#input .actions .dropdown-inline a,
+#input .actions .dropdown-inline input,
+#input .actions .dropdown-inline .btn,
+#input .actions .btn-group-inline select {
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+}
+
+#input .actions .btn-group-inline {
+  float: left;
+  margin-right: 10px;
+}
+
+#input .actions .btn-group-inline select {
+  width: 180px;
+}
+
+#results td .cell-button {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  text-align: left;
+}
+
+#results td div {
+  text-align: left;
+}
+
+#results td .row-action {
+  margin: 0;
+}
+
+#results th .table-header-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: bold;
+}
+
+#results th .table-header-button small {
+  color: inherit;
+  font-size: 11px;
+}
+
+#results.empty td {
+  padding: 12px 15px;
+}
+
+#results_view {
+  display: block;
+}
+
+#results_view pre {
+  white-space: pre-wrap;
+}
+
+#connection_window {
+  display: block;
+}
+
+#connection_window.hidden {
+  display: none;
+}
+
+#connection_form .row {
+  align-items: center;
+}
+
+#connection_form .btn-group.connection-group-switch {
+  display: inline-flex;
+}
+
+#connection_form .connection-bookmarks-group,
+#connection_form .connection-standard-group,
+#connection_form .connection-scheme-group,
+#connection_form .connection-ssh-group {
+  display: block;
+}
+
+#connection_form .connection-scheme-group.hidden,
+#connection_form .connection-standard-group.hidden,
+#connection_form .connection-ssh-group.hidden,
+#connection_form .connection-bookmarks-group.hidden {
+  display: none;
+}
+
+#connection_error {
+  display: block;
+}
+
+#connection_error.hidden {
+  display: none;
+}
+
+#content_modal {
+  display: block;
+}
+
+#content_modal.hidden {
+  display: none;
+}
+
+#objects .schema-group ul {
+  display: block;
+}
+
+#objects .schema .schema-container {
+  display: block;
+}
+
+#objects .schema:not(.expanded) .schema-container {
+  display: none;
+}
+
+#objects .schema-group:not(.expanded) ul {
+  display: none;
+}
+
+#pagination .filters button,
+#pagination .filters input,
+#pagination .filters select,
+#pagination .btn-group button {
+  font-size: 12px;
+}
+
+#pagination .btn-group {
+  gap: 0;
+}
+
+#pagination .filters .btn {
+  float: left;
+}
+
+#pagination .filters .reset-filters {
+  width: 32px;
+  padding: 0;
+}
+
+#pagination .btn.page {
+  min-width: 80px;
+}
+
+#pagination .current-page {
+  float: right;
+}
+
+#sidebar .current-database span.current-database-name.hidden,
+#sidebar .current-database input.typeahead.hidden,
+#sidebar .current-database select.typeahead.hidden {
+  display: none;
+}
+
+#sidebar .current-database span.current-database-name:not(.hidden) {
+  display: inline-block;
+}
+
+#results_view .copy {
+  color: #444;
+}

@@ -25,6 +25,8 @@ usage:
 	@echo "make docker          : Build docker image"
 	@echo "make docker-release  : Build and tag docker image"
 	@echo "make docker-push     : Push docker images to registry"
+	@echo "make frontend-dev    : Start Solid frontend dev server"
+	@echo "make frontend-build  : Build Solid frontend into static/dist"
 	@echo ""
 
 test:
@@ -55,7 +57,7 @@ release: clean
 
 clean:
 	@echo "Removing all artifacts"
-	@rm -rf ./pgweb ./bin/*
+	@rm -rf ./pgweb ./bin/* ./static/dist
 
 docker:
 	docker build --no-cache -t pgweb .
@@ -71,3 +73,9 @@ docker-release:
 docker-push:
 	docker push $(DOCKER_RELEASE_TAG)
 	docker push $(DOCKER_LATEST_TAG)
+
+frontend-dev:
+	cd frontend && npm install && npm run dev
+
+frontend-build:
+	cd frontend && npm install && npm run build
